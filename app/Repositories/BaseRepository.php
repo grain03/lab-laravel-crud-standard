@@ -13,7 +13,10 @@ abstract class BaseRepository {
     abstract function model():string;
 
     public function index(){
-       return $this->model->paginate();
+       return $this->model->paginate(5);
     }
 
+    public function show($id){
+        return $this->model->findOrFail($id);
+    }
 }

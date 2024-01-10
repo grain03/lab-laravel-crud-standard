@@ -1,7 +1,7 @@
 # lab crud standard
 This repository presents a standard Laravel project for task management.
 
-## Référence 
+## Référence
 
 - https://github.com/labs-web/lab-crud-standard
 
@@ -9,7 +9,7 @@ This repository presents a standard Laravel project for task management.
 
 - Compléter le travail sur le lab crud Laravel basic en utilisant le design pattern Repository, implémenter la recherche, ajouter la pagination et inclure la table des projets.
 
-#### Critères de validation 
+#### Critères de validation
 
 - compléter le travail sur [`lab crud laravel basic`](https://github.com/Jalil-Betroji/lab-crud.git)
 - Opérations CRUD pour les tâches
@@ -20,19 +20,21 @@ This repository presents a standard Laravel project for task management.
 - Filtrer par projet
 - Données d'exemple (jeux de test)
 
-##### Process Workflow 
+##### Process Workflow
 
 1. Next, create the .env file using the command:
 
 ```bash
 cp .env.example .env
 ```
-2. commands to create tables 
+
+2. commands to create tables
 
 ```bash
 php artisan make:migration create_projects_table
 php artisan make:migration create_tasks_table
 ```
+
 3. commands to create models
 
 ```bash
@@ -46,12 +48,12 @@ php artisan make:model Task
 php artisan make:controller ProjectsController
 php artisan make:controller TasksController
 ```
+
 5. commands to create Request
 
 ```bash
 php artisan make:request ValidateRequest
 ```
-
 
 6. Add the database name to the .env file.
 
@@ -68,10 +70,9 @@ php artisan migrate
 php artisan db:seed
 ```
 
-
 9. To view your project's progress locally, run this command:
 
-```bash 
+```bash
 php artisan serve
 
 ```

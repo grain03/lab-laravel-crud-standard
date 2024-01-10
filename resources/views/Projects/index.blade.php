@@ -9,8 +9,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="float-sm-right">
-                            <a href="./ajouter.php" class="btn btn-info">
-                                <i class="fas fa-plus"></i> Neveau projet
+                            <a href="./ajouter.php" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Nouveau Projet
                             </a>
                         </div>
 
