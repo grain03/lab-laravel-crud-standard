@@ -15,4 +15,6 @@ class ProjectsController extends Controller
         $Projects = $this->projectRepository->index();
         return view('Projects.index' , compact('Projects'));
     }
+
+
 }

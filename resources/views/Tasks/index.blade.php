@@ -8,14 +8,21 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="float-sm-right">
-                        <a class="btn btn-primary">
+                        <a href="{{ route('tasks.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Nouveau Tache
                         </a>
                     </div>
                 </div>
             </div>
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    {{ session('success') }}.
+                </div>
+            @endif
         </div>
     </div>
+
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -34,38 +41,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="card-body table-responsive p-0">
-                            <table class="table table-striped text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Titre</th>
-                                        <th>Description</th>
-                                        <th class="text-center">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($Tasks as $task)
-                                        <tr>
-                                            <td>{{ $task->name }}</td>
-                                            <td>
-                                                {{ $task->description }}
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="{{ route('tasks.show', $task->id) }}"
-                                                    class='btn btn-default btn-sm'>
-                                                    <i class="far fa-eye"></i>
-                                                </a>
-                                                <a href="./edit.php" class="btn btn-sm btn-default"><i
-                                                        class="fa-solid fa-pen-to-square"></i></a>
-                                                <button type="button" class="btn btn-sm btn-danger"><i
-                                                        class="fa-solid fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            {{ $Tasks->links() }}
+                            @include('Tasks.Table')
                         </div>
                     </div>
                 </div>

@@ -29,5 +29,22 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
         
+        DB::table("tasks")->insert([
+            [
+                'nom' => 'Portfolio',
+                'description' => 'Développement d\'un site web mettant en valeur nos compétences.',
+                'projetId' => 1,
+            ],
+            [
+                'nom' => 'Arbre des compétences',
+                'description' => 'Création d\'une application web pour l\'évaluation des compétences.',
+                'projetId' => 1,
+            ],
+            [
+                'nom' => '  CNMH',
+                'description' => 'Création d\'une application web pour laa gestion des patients de centre cnmh.',
+                'projetId' => 3,
+            ]
+        ]);
     }
 }

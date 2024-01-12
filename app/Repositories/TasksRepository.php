@@ -20,4 +20,12 @@
         return Task::class;
     }
 
+    public function store($request){
+        $this->model->create($request);
+    }
+
+    public function GetTasksByProjectId($projectId) {
+        return $this->model->where('projetId', $projectId)->paginate(3);
+    }
+
  }

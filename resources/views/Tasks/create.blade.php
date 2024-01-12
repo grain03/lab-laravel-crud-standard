@@ -1,31 +1,20 @@
-@extends('layouts.layout')
+@extends('../Layouts.Layout')
 @section('content')
-
-<div class="wrapper">
-
-        <div class="content-wrapper" style="min-height: 1302.4px;">
-
-            <div class="content-header">
-            </div>
-
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="card card-info">
-                                <div class="card-header">
-                                    <h3 class="card-title"> <i class="nav-icon fas fa-table"></i> Ajouter un Projet</h3>
-                                </div>
-                               @include('Projects.form')
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-        </div>
+    <div class="content-header">
     </div>
-    
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Ajouter Une Tâche</h3>
+                        </div>
+                        @include('Tasks.form')
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

@@ -1,15 +1,13 @@
 @foreach ($Tasks as $Task)
     <tr>
-        <td>{{ $Task->name }}</td>
-        <td>{{ $Task->project->name }}</td>
-
-        <td>{{ Str::limit($Task->description, 30) }} <a href="{{ route('show', $Task->id) }}">read more...</a></td>
+        <td>{{ $Task->nom }}</td>
+        <td>{{ Str::limit($Task->description, 30) }}...</a></td>
 
         <td class="d-flex">
-            <a href="{{ route('edit', ['task' => $Task->id]) }}" class="btn btn-sm btn-default mx-2">
+            <a href="{{ route('tasks.edit', ['task' => $Task->id]) }}" class="btn btn-sm btn-default mx-2">
                 <i class="fa-solid fa-pen-to-square"></i>
             </a>
-            <form action="{{ route('destroy', ['task' => $Task->id]) }}" method="post">
+            <form action="{{ route('tasks.destroy', ['task' => $Task->id]) }}" method="post">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-sm btn-danger">
@@ -20,7 +18,6 @@
     </tr>
 @endforeach
 <tr>
-    <td></td>
     <td></td>
     <td></td>
     <td>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateRequest extends FormRequest {
+class StoreTaskRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make the request.
@@ -21,8 +21,8 @@ class ValidateRequest extends FormRequest {
      public function rules():array{
         return [
             'nom' => 'required|max:40',
-            'projetId' => 'required',
             'description' => 'nullable',
+            'projetId' => 'required',
         ];
      }
 

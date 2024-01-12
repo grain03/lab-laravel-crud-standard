@@ -1,31 +1,22 @@
-@foreach ($Projects as $Project)
+@foreach ($Projects as $project)
     <tr>
-        <td>{{ $Project->nom }}</td>
-
-        <td>{{ Str::limit($Project->description, 30) }} <a href="">read more...</a></td>
-
-        <td class="d-flex">
-            <a href="" class="btn btn-sm btn-default mx-2">
-                <i class="fa-solid fa-pen-to-square"></i>
+        <td>{{ $project->nom }}</td>
+        <td>
+            {{ $project->description }}
+        </td>
+        <td class="text-center">
+            <a href="{{ route('projects.tasks',['projectId'=> $project->id] ) }}" class='btn btn-default btn-sm'>
+                <i class="far fa-eye"></i>
             </a>
-            <form action="" method="post">
-                @csrf
-                @method('delete')
-                <button type="submit" class="btn btn-sm btn-danger">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </form>
         </td>
     </tr>
 @endforeach
 <tr>
     <td></td>
     <td></td>
-    <td></td>
     <td>
         <div class="pagination m-0 float-right">
             {{ $Projects->links() }}
         </div>
-
     </td>
 </tr>
