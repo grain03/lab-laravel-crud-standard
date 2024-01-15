@@ -28,4 +28,12 @@
         return $this->model->where('projetId', $projectId)->paginate(3);
     }
 
+    public function searchTasks($searchTask)
+    {
+        return $this->model->where(function ($query) use ($searchTask) {
+            $query->where('nom', 'like', '%' . $searchTask . '%')
+                ->orWhere('description', 'like', '%' . $searchTask . '%');
+        })->paginate(4);
+    }
+
  }

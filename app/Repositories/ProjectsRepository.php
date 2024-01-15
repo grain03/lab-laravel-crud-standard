@@ -19,4 +19,12 @@
     public function model():string{
         return Project::class;
     }
+
+    public function searchProjects($searchTask)
+    {
+        return Project::where(function ($query) use ($searchTask) {
+            $query->where('nom', 'like', '%' . $searchTask . '%')
+                ->orWhere('description', 'like', '%' . $searchTask . '%');
+        })->paginate(4);
+    }
  }
